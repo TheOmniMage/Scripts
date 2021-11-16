@@ -31,3 +31,11 @@ for line in Target_list:
     p = subprocess.Popen(['smbclient.py', text], stdin=PIPE,stdout=file_out) #allows automated interaction with prompt - writes share info to file
     p.stdin.write(b"shares\nexit") #had to newline this as I can't find a multi-line solution
     p.communicate()
+
+    '''
+    To-do:
+    Add argparse or something for cli argument implimentation
+    make user_name/pw/file_out/file editable by argument
+    have stdout from smbclient.py pipe into a variable, turn variable into list, enumerate through list to determine read/write access to share and output 
+    info to stdout/file
+    '''
