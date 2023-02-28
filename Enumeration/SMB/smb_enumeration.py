@@ -6,12 +6,12 @@ from getpass import getpass
 import subprocess
 from subprocess import PIPE
 
-#file = open('/home/kali/Documents/Engagements/MFE_11_2021/Notes/targets_2.txt', 'r')
+#file = open('targets_2.txt', 'r')
 #file = file.readlines()
 #file = file.rstrip()
 #file.close()
 
-with open('/home/kali/Documents/Engagements/MFE_11_2021/Notes/targets_2.txt', 'r') as file:
+with open('targets_2.txt', 'r') as file:
     for line in file:
         Target_list = file.read()
 
@@ -20,7 +20,7 @@ Target_list = Target_list.split()
 #print(Target_list)
 user_name = input('Enter Username with domain\n')
 pw = getpass('Enter Password\n') #Hides password on entry
-file_out = open('/home/kali/Documents/Engagements/MFE_11_2021/Notes/smb_out.txt', "a")
+file_out = open('smb_out.txt', "a")
 for line in Target_list:
     text = user_name + ':' + pw + '@' + line #write arguments for smbclient.py - subprocess didn't like my arguments on the line itself
     print('[+] '+ line + '\n')
